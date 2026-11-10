@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" role="img" aria-label="Laptop dengan simbol kode dan tanaman">
+  <defs>
+    <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#27457f"/>
+      <stop offset="1" stop-color="#0f2349"/>
+    </linearGradient>
+    <linearGradient id="bez" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a3a63"/>
+      <stop offset="1" stop-color="#16223f"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9fb2d6"/>
+      <stop offset="1" stop-color="#7e93bb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- bayangan -->
+  <ellipse cx="300" cy="318" rx="280" ry="14" fill="#9dbdf2" opacity=".55"/>
+
+  <!-- layar -->
+  <polygon points="150,62 442,26 424,246 134,252" fill="url(#bez)"/>
+  <polygon points="161,74 431,41 414,235 147,240" fill="url(#scr)"/>
+  <polygon points="161,74 431,41 428,62 158,96" fill="#ffffff" opacity=".05"/>
+
+  <!-- simbol </> -->
+  <g fill="none" stroke="#5b9bff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="242,112 212,150 240,188"/>
+    <line x1="302" y1="100" x2="278" y2="198"/>
+    <polyline points="338,110 366,148 336,184"/>
+  </g>
+
+  <!-- badan laptop -->
+  <polygon points="134,252 424,246 468,274 28,296" fill="url(#base)"/>
+  <polygon points="150,262 410,257 436,272 74,288" fill="#b8c7e3" opacity=".7"/>
+  <polygon points="28,296 468,274 470,284 34,308" fill="#1d2f57"/>
+  <path d="M34,308 Q250,322 470,284" fill="none" stroke="#12203f" stroke-width="2"/>
+
+  <!-- tanaman -->
+  <g transform="translate(0,0)">
+    <path d="M510,244 Q505,170 514,106 Q540,140 530,244 Z" fill="#1f9d63"/>
+    <path d="M520,250 Q470,215 462,150 Q510,160 530,250 Z" fill="#2eb072"/>
+    <path d="M524,250 Q580,225 590,160 Q540,165 524,250 Z" fill="#188a56"/>
+    <path d="M520,252 Q560,200 548,138 Q512,190 520,252 Z" fill="#24a566"/>
+    <path d="M518,254 Q485,235 482,196 Q512,208 518,254 Z" fill="#37b97a"/>
+    <path d="M492,250 L560,250 L552,318 Q526,326 500,318 Z" fill="#ffffff"/>
+    <path d="M536,250 L560,250 L552,318 Q544,321 536,322 Z" fill="#dfe8f6"/>
+    <ellipse cx="526" cy="250" rx="34" ry="6" fill="#eef3fb"/>
+  </g>
+</svg>
