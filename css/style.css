@@ -1,0 +1,593 @@
+/* ==========================================
+   PORTFOLIO ZIANARAH ZIHAN
+   Semua class dan id memakai awalan "zianarah_"
+========================================== */
+
+/* ---------- RESET & DASAR ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 76px;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+    background-color: #fbfcff;
+    color: #0f1b3d;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a:focus-visible {
+    outline: 3px solid #1558d6;
+    outline-offset: 3px;
+}
+
+.zianarah_container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* ---------- HEADER ---------- */
+.zianarah_header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 68px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 #e8edf6;
+}
+
+.zianarah_header_inner {
+    max-width: 1120px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zianarah_logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0b1a3c;
+}
+
+.zianarah_logo_icon {
+    width: 32px;
+    height: 32px;
+}
+
+.zianarah_logo em {
+    font-style: normal;
+    color: #1558d6;
+}
+
+.zianarah_menu ul {
+    display: flex;
+    gap: 36px;
+}
+
+.zianarah_menu a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0b1a3c;
+    transition: color 0.2s;
+}
+
+.zianarah_menu a:hover,
+.zianarah_menu a.zianarah_active {
+    color: #1558d6;
+}
+
+
+/* ---------- HERO ---------- */
+.zianarah_hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(100deg, #f3f7ff 0%, #e8f0fd 55%, #dbe8fc 100%);
+}
+
+/* bentuk lengkung biru di sisi kanan */
+.zianarah_hero::before {
+    content: "";
+    position: absolute;
+    left: 48%;
+    top: 30%;
+    width: 80%;
+    height: 130%;
+    background-color: #c3d8fb;
+    border-radius: 60% 40% 0 0 / 55% 45% 0 0;
+    opacity: 0.75;
+}
+
+.zianarah_hero::after {
+    content: "";
+    position: absolute;
+    right: 3%;
+    top: -80px;
+    width: 160px;
+    height: 160px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.zianarah_hero_inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 48px 24px 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.zianarah_hero_text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.zianarah_intro {
+    font-size: 22px;
+    font-weight: 500;
+    color: #0b1a3c;
+    line-height: 1.3;
+}
+
+.zianarah_hero h1 {
+    font-size: 58px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #0b1a3c;
+    margin: 2px 0 6px;
+}
+
+.zianarah_hero h1 span {
+    color: #1558d6;
+}
+
+.zianarah_hero h3 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #34425e;
+    margin-bottom: 18px;
+}
+
+.zianarah_description {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.65;
+    color: #1b2a4a;
+    max-width: 420px;
+    margin-bottom: 24px;
+}
+
+.zianarah_hero_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.zianarah_button,
+.zianarah_button_outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.zianarah_button img,
+.zianarah_button_outline img {
+    width: 16px;
+    height: 16px;
+}
+
+.zianarah_button {
+    background-color: #1558d6;
+    color: #ffffff;
+    border: 1.5px solid #1558d6;
+}
+
+.zianarah_button:hover {
+    background-color: #0f46b0;
+    transform: translateY(-2px);
+}
+
+.zianarah_button_outline {
+    background-color: #ffffff;
+    color: #1558d6;
+    border: 1.5px solid #1558d6;
+}
+
+.zianarah_button_outline:hover {
+    background-color: #eef4ff;
+    transform: translateY(-2px);
+}
+
+.zianarah_hero_image {
+    flex: 0 0 540px;
+    max-width: 540px;
+}
+
+.zianarah_hero_image img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ---------- JUDUL SECTION ---------- */
+.zianarah_title {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0b1a3c;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+/* garis biru kecil di bawah judul */
+.zianarah_title::after {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 3px;
+    margin-top: 6px;
+    background-color: #1558d6;
+    border-radius: 3px;
+}
+
+.zianarah_title_plain {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.zianarah_title_plain::after {
+    display: none;
+}
+
+
+/* ---------- ABOUT ME ---------- */
+.zianarah_about {
+    padding: 32px 0 8px;
+}
+
+.zianarah_about_inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.zianarah_about_text {
+    flex: 1;
+    max-width: 560px;
+}
+
+.zianarah_about_text p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.65;
+    color: #1b2a4a;
+    margin-bottom: 18px;
+}
+
+.zianarah_information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 36px;
+}
+
+.zianarah_information li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #56627c;
+}
+
+.zianarah_information img {
+    width: 17px;
+    height: 17px;
+}
+
+.zianarah_profile {
+    flex: 0 0 230px;
+    height: 270px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #dfe5f2;
+    box-shadow: 0 2px 10px rgba(21, 40, 90, 0.08);
+}
+
+.zianarah_profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* ---------- SKILLS ---------- */
+.zianarah_skills {
+    padding: 22px 0 14px;
+}
+
+.zianarah_skill_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px 16px;
+}
+
+.zianarah_skill_card {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background-color: #f3f6fc;
+    border: 1px solid #e9eef8;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #34425e;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.zianarah_skill_card img {
+    width: 28px;
+    height: 28px;
+}
+
+.zianarah_skill_card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(21, 88, 214, 0.1);
+}
+
+
+/* ---------- PROJECTS ---------- */
+.zianarah_projects {
+    padding: 26px 0 40px;
+}
+
+.zianarah_project_container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.zianarah_project_card {
+    background-color: #ffffff;
+    border: 1px solid #e6ecf6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(21, 40, 90, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.zianarah_project_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(21, 40, 90, 0.1);
+}
+
+.zianarah_project_card img {
+    width: 100%;
+    height: 105px;
+    object-fit: cover;
+}
+
+.zianarah_project_info {
+    padding: 10px 12px 12px;
+}
+
+.zianarah_project_info h3 {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #0b1a3c;
+    margin-bottom: 2px;
+}
+
+.zianarah_project_info p {
+    font-size: 11.5px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #34425e;
+    margin-bottom: 6px;
+}
+
+.zianarah_project_info a {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #1558d6;
+    text-decoration: none;
+}
+
+.zianarah_project_info a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------- FOOTER ---------- */
+.zianarah_footer {
+    background-color: #172346;
+    color: #ffffff;
+    padding: 20px 0 14px;
+}
+
+.zianarah_footer_content {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding-bottom: 12px;
+}
+
+.zianarah_footer_brand {
+    padding-right: 36px;
+    border-right: 1.5px solid #4a5678;
+}
+
+.zianarah_footer_brand h3 {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #ffffff;
+}
+
+.zianarah_footer_brand h3 span {
+    color: #5aa2ff;
+}
+
+.zianarah_footer_brand p {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #d3dbee;
+}
+
+.zianarah_footer_contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 36px;
+}
+
+.zianarah_footer_contact li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #e6ebf7;
+}
+
+.zianarah_footer_contact img {
+    width: 16px;
+    height: 16px;
+}
+
+.zianarah_copyright {
+    border-top: 1px solid #34426a;
+    padding-top: 10px;
+    font-size: 11.5px;
+    color: #c4cde4;
+}
+
+
+/* ---------- RESPONSIVE TABLET ---------- */
+@media screen and (max-width: 960px) {
+    .zianarah_hero_inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 36px;
+    }
+
+    .zianarah_hero_text {
+        max-width: 560px;
+    }
+
+    .zianarah_description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .zianarah_hero_buttons {
+        justify-content: center;
+    }
+
+    .zianarah_hero_image {
+        flex: none;
+        width: 100%;
+        max-width: 440px;
+    }
+
+    .zianarah_skill_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .zianarah_project_container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ---------- RESPONSIVE HP ---------- */
+@media screen and (max-width: 600px) {
+    .zianarah_header {
+        height: auto;
+    }
+
+    .zianarah_header_inner {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .zianarah_menu ul {
+        gap: 22px;
+    }
+
+    .zianarah_hero h1 {
+        font-size: 40px;
+    }
+
+    .zianarah_about_inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .zianarah_profile {
+        flex: none;
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        aspect-ratio: 230 / 270;
+    }
+
+    .zianarah_skill_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .zianarah_project_container {
+        grid-template-columns: 1fr;
+    }
+
+    .zianarah_footer_content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .zianarah_footer_brand {
+        padding-right: 0;
+        border-right: 0;
+    }
+}
