@@ -139,7 +139,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .zianarah_hero_inner {
     position: relative; z-index: 2; width: min(1220px, 100% - 48px); margin-inline: auto;
     display: grid; grid-template-columns: 1.05fr .95fr; align-items: end; gap: 20px;
-    padding-top: 90px; min-height: 100vh; min-height: 100svh;
+    padding-top: 90px; padding-bottom: clamp(66px, 9vw + 12px, 132px); min-height: 100vh; min-height: 100svh;
 }
 .zianarah_hero_text { align-self: center; padding-bottom: 60px; }
 .zianarah_intro { color: var(--zianarah-pink); font-weight: 600; letter-spacing: 1px; margin-bottom: 4px; }
@@ -153,25 +153,72 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .zianarah_hero_in { opacity: 0; transform: translateY(28px); filter: blur(8px); animation: zianarah_in 1s var(--zianarah-ease) var(--d, 0s) forwards; }
 @keyframes zianarah_in { to { opacity: 1; transform: none; filter: none; } }
 
-.zianarah_hero_image { position: relative; align-self: end; justify-self: center; width: min(100%, 560px); height: min(78vh, 640px); display: flex; align-items: flex-end; justify-content: center; }
-.zianarah_hero_photo {
-    position: relative; z-index: 2; height: 100%; width: auto; max-width: none;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
-    mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
-    filter: drop-shadow(0 0 40px rgba(255, 79, 168, .45));
-    opacity: 0; transform: translateY(60px) scale(.96);
-    animation: zianarah_photo 1.3s var(--zianarah-ease) .3s forwards; will-change: transform;
+/* Foto hero — "Neon Orbit" (ukuran mengikuti lebar/tinggi layar lewat --d) */
+.zianarah_hero_image {
+    --d: clamp(320px, min(30vw, 46vh), 420px);
+    position: relative; align-self: end; justify-self: center;
+    width: min(100%, 560px); height: calc(var(--d) * 1.5 + 70px);
 }
-@keyframes zianarah_photo { to { opacity: 1; transform: none; } }
-.zianarah_ring { position: absolute; border-radius: 50%; left: 50%; top: 50%; translate: -50% -56%; border: 1.5px solid rgba(255, 140, 220, .4); }
-.zianarah_ring_inner { width: 86%; aspect-ratio: 1; box-shadow: 0 0 60px rgba(255, 79, 168, .35) inset; animation: zianarah_pulse 5s ease-in-out infinite; }
-.zianarah_ring_outer { width: 100%; aspect-ratio: 1; border-style: dashed; opacity: .5; animation: zianarah_spin 60s linear infinite; }
-@keyframes zianarah_pulse { 50% { transform: scale(1.04); box-shadow: 0 0 90px rgba(255, 79, 168, .5) inset; } }
+.zianarah_orbit_fill {
+    position: absolute; left: 50%; bottom: 50px; width: var(--d); height: var(--d); translate: -50% 0; border-radius: 50%;
+    background: radial-gradient(circle at 50% 30%, #ff7cc8, #a24bd6 55%, #4b1f8f);
+    box-shadow: 0 0 70px rgba(255, 79, 168, .55), inset 0 0 50px rgba(255, 255, 255, .18);
+    animation: zianarah_glow 5s ease-in-out infinite;
+}
+@keyframes zianarah_glow { 50% { box-shadow: 0 0 100px rgba(255, 79, 168, .75), inset 0 0 60px rgba(255, 255, 255, .24); } }
+.zianarah_ring { position: absolute; left: 50%; border-radius: 50%; translate: -50% 0; aspect-ratio: 1; }
+.zianarah_ring_inner {
+    z-index: 1; width: calc(var(--d) + 28px); bottom: 36px; padding: 3px;
+    background: conic-gradient(from 0deg, #ff4fa8, #b388ff, #5ee7ff, #ff4fa8);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    animation: zianarah_spin 8s linear infinite;
+}
+.zianarah_ring_outer { z-index: 1; width: calc(var(--d) + 64px); bottom: 18px; border: 1.5px dashed rgba(255, 170, 230, .45); animation: zianarah_spin 60s linear infinite reverse; }
 @keyframes zianarah_spin { to { transform: rotate(360deg); } }
 
-.zianarah_scroll_hint { position: absolute; z-index: 3; left: 50%; bottom: 22px; width: 24px; height: 40px; margin-left: -12px; border: 2px solid rgba(255, 255, 255, .45); border-radius: 14px; }
-.zianarah_scroll_hint span { position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 3px; background: var(--zianarah-pink); animation: zianarah_wheel 1.8s infinite; }
-@keyframes zianarah_wheel { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(14px); } }
+.zianarah_photo_clip {
+    position: absolute; z-index: 2; left: 50%; bottom: 50px; width: var(--d); height: calc(var(--d) * 1.45); translate: -50% 0;
+    border-radius: 0 0 calc(var(--d) / 2) calc(var(--d) / 2); overflow: hidden;
+}
+.zianarah_hero_photo {
+    position: absolute; bottom: 0; left: 50%; width: calc(var(--d) * 1.05); height: auto; max-width: none;
+    translate: -50% 0 !important;
+    filter: drop-shadow(0 0 16px rgba(255, 79, 168, .4));
+    opacity: 0; transform: translateY(50px) scale(.96);
+    animation: zianarah_photo 1.3s var(--zianarah-ease) .3s forwards;
+}
+@keyframes zianarah_photo { to { opacity: 1; transform: none; } }
+
+.zianarah_badge {
+    position: absolute; z-index: 4; display: flex; align-items: center; gap: 8px; white-space: nowrap;
+    padding: 9px 14px 9px 9px; border-radius: 16px; font-size: 12px; font-weight: 700;
+    background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 190, 240, .35);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25), 0 0 22px rgba(255, 79, 168, .25);
+    animation: zianarah_bob 6s ease-in-out infinite;
+}
+.zianarah_badge b { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 9px; font-size: 12px; background: linear-gradient(135deg, #ff4fa8, #9b6bff); }
+.zianarah_badge_a { left: 0; bottom: calc(50px + var(--d) * .52); }
+.zianarah_badge_b { right: 0; bottom: calc(50px + var(--d) * .27); animation-delay: -2s; }
+.zianarah_badge_c { left: 6%; bottom: 4px; animation-delay: -4s; }
+@keyframes zianarah_bob { 50% { transform: translateY(-10px); } }
+.zianarah_spark { position: absolute; z-index: 3; color: #fff; text-shadow: 0 0 12px #ff7cc8; animation: zianarah_twinkle 3s ease-in-out infinite; }
+.zianarah_spark_a { left: 6%; bottom: calc(50px + var(--d) * 1.1); font-size: 26px; }
+.zianarah_spark_b { right: 8%; bottom: calc(50px + var(--d) * 1.18); font-size: 16px; animation-delay: -1s; }
+.zianarah_spark_c { right: 6%; bottom: 20px; font-size: 22px; animation-delay: -2s; }
+.zianarah_spark_d { left: 44%; bottom: calc(50px + var(--d) * 1.42); font-size: 13px; animation-delay: -.5s; }
+@keyframes zianarah_twinkle { 50% { opacity: .35; transform: scale(.7) rotate(25deg); } }
+
+
+/* Pembatas gelombang di bawah hero */
+.zianarah_hero_wave { position: absolute; z-index: 5; left: 0; right: 0; bottom: -1px; height: clamp(60px, 10vw, 132px); overflow: hidden; pointer-events: none; }
+.zianarah_wave_layer { position: absolute; left: 0; bottom: 0; width: 200%; height: 100%; }
+.zianarah_wave_back { animation: zianarah_drift 80s linear infinite reverse; }
+.zianarah_wave_mid { animation: zianarah_drift 55s linear infinite; }
+.zianarah_wave_front { animation: zianarah_drift 38s linear infinite reverse; }
+.zianarah_wave_edge { fill: none; stroke: url(#zianarah_grad_edge); stroke-width: 2.5; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 6px rgba(255, 95, 183, .9)); }
+@keyframes zianarah_drift { to { transform: translateX(-50%); } }
 
 /* ---------- Sections ---------- */
 .zianarah_about, .zianarah_skills, .zianarah_gallery, .zianarah_projects { padding: 80px 0; position: relative; }
@@ -310,10 +357,9 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
     .zianarah_hero_text h1 { white-space: normal; }
     .zianarah_hero_text h3 { font-size: clamp(14px, 4.2vw, 20px); overflow-wrap: anywhere; }
     .zianarah_about_inner { grid-template-columns: minmax(0, 1fr); }
-    .zianarah_hero_image { height: 460px; }
+    .zianarah_hero_image { --d: clamp(240px, 74vw, 320px); width: 100%; }
     .zianarah_hero_tint { background: linear-gradient(180deg, rgba(13, 7, 22, .9) 10%, rgba(60, 15, 80, .55) 60%, rgba(255, 80, 170, .2)), linear-gradient(0deg, #0d0716 2%, transparent 40%); }
-    .zianarah_scroll_hint { display: none; }
-
+    
     .zianarah_about_inner { grid-template-columns: 1fr; }
     .zianarah_about, .zianarah_skills, .zianarah_gallery, .zianarah_projects { padding: 60px 0; }
     .zianarah_reveal_right { transform: translateY(46px); }
