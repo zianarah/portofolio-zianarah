@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zianarah Portofolio</title>
+    <title>Zianarah Zihan | Portofolio</title>
+    <meta name="description" content="Portofolio Zianarah Zihan — Student, Web Developer, UI/UX Enthusiast.">
+    <meta name="theme-color" content="#0d0716">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,21 +15,31 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header class="zianarah_header" id="zianarah_home">
+    <div class="zianarah_progress" id="zianarah_progress" aria-hidden="true"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="zianarah_header" id="zianarah_header">
         <div class="zianarah_header_inner">
 
             <a href="#zianarah_home" class="zianarah_logo">
-                <img src="images/icons/logo-code.svg" alt="" class="zianarah_logo_icon">
-                <span>Zianarah <em>Portofolio</em></span>
+                <span class="zianarah_logo_text">Zianarah <em>Portofolio</em>
+                    <small>Student &bull; Web Developer</small>
+                </span>
             </a>
 
-            <nav class="zianarah_menu">
+            <button class="zianarah_menu_toggle" id="zianarah_menu_toggle" type="button"
+                    aria-label="Buka menu" aria-expanded="false" aria-controls="zianarah_menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="zianarah_menu" id="zianarah_menu" aria-label="Menu utama">
                 <ul>
-                    <li><a href="#zianarah_home" class="zianarah_active">Home</a></li>
-                    <li><a href="#zianarah_about">About</a></li>
-                    <li><a href="#zianarah_skills">Skills</a></li>
-                    <li><a href="#zianarah_projects">Projects</a></li>
+                    <li><a href="#zianarah_home" class="zianarah_menu_link zianarah_active">Home</a></li>
+                    <li><a href="#zianarah_about" class="zianarah_menu_link">About</a></li>
+                    <li><a href="#zianarah_skills" class="zianarah_menu_link">Skills</a></li>
+                    <li><a href="#zianarah_gallery" class="zianarah_menu_link">Gallery</a></li>
+                    <li><a href="#zianarah_projects" class="zianarah_menu_link">Projects</a></li>
+                    <li><a href="#zianarah_contact" class="zianarah_button zianarah_button_small">Hire Me</a></li>
                 </ul>
             </nav>
 
@@ -35,110 +47,226 @@
     </header>
 
 
-    <!-- HERO -->
-    <section class="zianarah_hero">
+    <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="zianarah_hero" id="zianarah_home">
+        <div class="zianarah_hero_bg" data-speed="0.15"></div>
+        <div class="zianarah_hero_tint"></div>
+        <div class="zianarah_orb zianarah_orb_pink" data-speed="-0.08"></div>
+        <div class="zianarah_orb zianarah_orb_violet" data-speed="0.1"></div>
+
         <div class="zianarah_hero_inner">
 
             <div class="zianarah_hero_text">
-                <p class="zianarah_intro">Hello, I'm</p>
-                <h1>Zianarah <span>Zihan</span></h1>
-                <h3>Student | Web Developer | UI/UX Enthusiast</h3>
-                <p class="zianarah_description">
-                    Welcome to my personal portfolio. I'm passionate about
-                    technology, design, and building innovative solutions
-                    for a better future.
+                <p class="zianarah_intro zianarah_hero_in" style="--d:.05s">Hello, I'm</p>
+                <h1 class="zianarah_hero_in" style="--d:.15s">Zianarah <span class="zianarah_grad">Zihan</span></h1>
+                <h3 class="zianarah_hero_in" style="--d:.25s">Student | Web Developer | UI/UX Enthusiast</h3>
+                <p class="zianarah_description zianarah_hero_in" style="--d:.35s">
+                    I build clean, modern and aesthetic digital experiences &mdash;
+                    where technology meets a touch of creativity.
                 </p>
 
-                <div class="zianarah_hero_buttons">
-                    <a href="#zianarah_about" class="zianarah_button">
-                        <img src="images/icons/user-white.svg" alt="">About Me
+                <div class="zianarah_hero_buttons zianarah_hero_in" style="--d:.45s">
+                    <a href="#zianarah_projects" class="zianarah_button">View My Work
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
-                    <a href="mailto:zihanzianara@gmail.com" class="zianarah_button_outline">
-                        <img src="images/icons/mail-blue.svg" alt="">Contact Me
+                    <a href="mailto:zihanzianara@gmail.com" class="zianarah_button zianarah_button_outline zianarah_mail">
+                        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        Contact Me
                     </a>
                 </div>
+
+                <ul class="zianarah_chips zianarah_hero_in" style="--d:.55s">
+                    <li>&#10022; HTML5</li><li>&#10022; CSS3</li><li>&#10022; JavaScript</li><li>&#10022; UI/UX</li>
+                </ul>
             </div>
 
             <div class="zianarah_hero_image">
-                <img src="images/hero-laptop.svg" alt="Laptop with code symbol and a plant">
+                <div class="zianarah_ring zianarah_ring_outer"></div>
+                <div class="zianarah_ring zianarah_ring_inner"></div>
+                <img src="images/hero-zianarah.png" alt="Foto Zianarah Zihan" class="zianarah_hero_photo" data-speed="-0.05" width="433" height="577">
             </div>
 
         </div>
+
+        <a href="#zianarah_about" class="zianarah_scroll_hint" aria-label="Scroll ke bawah"><span></span></a>
     </section>
 
 
-    <!-- ABOUT ME -->
+    <!-- ================= ABOUT ME ================= -->
     <section class="zianarah_about" id="zianarah_about">
         <div class="zianarah_container zianarah_about_inner">
 
             <div class="zianarah_about_text">
-                <h2 class="zianarah_title">About Me</h2>
-                <p>
+                <p class="zianarah_label zianarah_reveal">ABOUT ME</p>
+                <h2 class="zianarah_title zianarah_reveal" style="--d:.08s">Get to Know <span class="zianarah_grad">Me</span></h2>
+                <p class="zianarah_reveal" style="--d:.16s">
                     I am a student at the Informatics Engineering Study Program
                     with a strong interest in web development, UI/UX design,
                     and information technology. I enjoy learning, creating,
                     and sharing knowledge.
                 </p>
 
-                <ul class="zianarah_information">
-                    <li><img src="images/icons/pin-blue.svg" alt="">Tasikmalaya, Indonesia</li>
-                    <li><img src="images/icons/mail-blue.svg" alt="">zihanzianara@gmail.com</li>
-                    <li><img src="images/icons/cap-blue.svg" alt="">S1 Informatics</li>
-                </ul>
+                <div class="zianarah_stats zianarah_reveal" style="--d:.24s">
+                    <div><b class="zianarah_grad">S1</b><span>Informatics</span></div>
+                    <div><b class="zianarah_grad zianarah_count" data-count="4">0</b><span>Projects</span></div>
+                    <div><b class="zianarah_grad zianarah_count" data-count="6">0</b><span>Core Skills</span></div>
+                </div>
+
+                <a href="#zianarah_projects" class="zianarah_button zianarah_reveal" style="--d:.32s">See My Projects
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
 
-            <div class="zianarah_profile">
-                <img src="images/foto-zianarah.jpg" alt="Photo of Zianarah Zihan">
-            </div>
+            <ul class="zianarah_information zianarah_glass zianarah_reveal zianarah_reveal_right">
+                <li>
+                    <span class="zianarah_icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span>
+                    <p><b>Location</b><span>Tasikmalaya, Indonesia</span></p>
+                </li>
+                <li>
+                    <span class="zianarah_icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 7 9-7"/></svg></span>
+                    <p><b>Email</b><span>zihanzianara@gmail.com</span></p>
+                </li>
+                <li>
+                    <span class="zianarah_icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/></svg></span>
+                    <p><b>Education</b><span>S1 Informatics</span></p>
+                </li>
+                <li>
+                    <span class="zianarah_icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg></span>
+                    <p><b>Focus</b><span>Web Development &amp; UI/UX</span></p>
+                </li>
+            </ul>
 
         </div>
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- ================= SKILLS ================= -->
     <section class="zianarah_skills" id="zianarah_skills">
-        <div class="zianarah_container">
+        <div class="zianarah_container zianarah_center">
 
-            <h2 class="zianarah_title zianarah_title_plain">Skills</h2>
+            <p class="zianarah_label zianarah_reveal">MY SKILLS</p>
+            <h2 class="zianarah_title zianarah_reveal" style="--d:.08s">What I Work With</h2>
 
             <div class="zianarah_skill_container">
-                <div class="zianarah_skill_card"><img src="images/icons/html5.svg" alt="">HTML5</div>
-                <div class="zianarah_skill_card"><img src="images/icons/css3.svg" alt="">CSS3</div>
-                <div class="zianarah_skill_card"><img src="images/icons/javascript.svg" alt="">JavaScript</div>
-                <div class="zianarah_skill_card"><img src="images/icons/python.svg" alt="">Python</div>
-                <div class="zianarah_skill_card"><img src="images/icons/mysql.svg" alt="">MySQL</div>
-                <div class="zianarah_skill_card"><img src="images/icons/php.svg" alt="">PHP</div>
+                <div class="zianarah_skill_card zianarah_glass zianarah_reveal" style="--d:.05s"><img src="images/icons/html5.svg" alt="" width="34" height="34">HTML5</div>
+                <div class="zianarah_skill_card zianarah_glass zianarah_reveal" style="--d:.12s"><img src="images/icons/css3.svg" alt="" width="34" height="34">CSS3</div>
+                <div class="zianarah_skill_card zianarah_glass zianarah_reveal" style="--d:.19s"><img src="images/icons/javascript.svg" alt="" width="34" height="34">JavaScript</div>
+                <div class="zianarah_skill_card zianarah_glass zianarah_reveal" style="--d:.26s"><img src="images/icons/python.svg" alt="" width="34" height="34">Python</div>
+                <div class="zianarah_skill_card zianarah_glass zianarah_reveal" style="--d:.33s"><img src="images/icons/mysql.svg" alt="" width="34" height="34">MySQL</div>
+                <div class="zianarah_skill_card zianarah_glass zianarah_reveal" style="--d:.40s"><img src="images/icons/php.svg" alt="" width="34" height="34">PHP</div>
             </div>
 
         </div>
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- ================= GALLERY ================= -->
+    <section class="zianarah_gallery" id="zianarah_gallery">
+        <div class="zianarah_container zianarah_center">
+
+            <p class="zianarah_label zianarah_reveal">BEHIND THE CODE</p>
+            <h2 class="zianarah_title zianarah_reveal" style="--d:.08s">The Person <span class="zianarah_grad">Behind the Screen</span></h2>
+            <p class="zianarah_gallery_desc zianarah_reveal" style="--d:.16s">
+                Di balik setiap baris kode ada rutinitas, rasa ingin tahu, dan inspirasi dari dunia nyata.
+            </p>
+
+            <div class="zianarah_slider zianarah_reveal zianarah_reveal_zoom" id="zianarah_slider" aria-roledescription="carousel" aria-label="Galeri foto">
+
+                <button class="zianarah_arrow zianarah_arrow_prev" id="zianarah_prev" type="button" aria-label="Foto sebelumnya">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+
+                <div class="zianarah_slider_frame">
+                    <div class="zianarah_slider_glow"></div>
+                    <div class="zianarah_slider_view" id="zianarah_slider_view">
+
+                        <figure class="zianarah_slide zianarah_is_active" data-pos="50% 38%" data-caption="Morning run — segarkan pikiran sebelum ngoding">
+                            <img src="images/gallery/zia-1.jpg" alt="Zianarah berlari pagi di jalan kota" style="object-position:50% 38%">
+                        </figure>
+                        <figure class="zianarah_slide" data-pos="50% 52%" data-caption="Explore &amp; recharge — ide segar datang dari alam">
+                            <img src="images/gallery/zia-2.jpg" alt="Zianarah bermain di sungai" style="object-position:50% 52%" loading="lazy">
+                        </figure>
+                        <figure class="zianarah_slide" data-pos="50% 78%" data-caption="Take a pause — ruang untuk berpikir lebih jernih">
+                            <img src="images/gallery/zia-3.jpg" alt="Zianarah di jalan dengan latar gunung berawan" style="object-position:50% 78%" loading="lazy">
+                        </figure>
+
+                        <div class="zianarah_slide_overlay"></div>
+                        <button class="zianarah_slide_open" id="zianarah_slide_open" type="button" aria-label="Perbesar foto"></button>
+                        <p class="zianarah_slide_caption" id="zianarah_slide_caption"></p>
+                        <span class="zianarah_slide_zoom"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Klik untuk perbesar</span>
+                        <span class="zianarah_slide_count" id="zianarah_slide_count">01 / 03</span>
+                    </div>
+                </div>
+
+                <button class="zianarah_arrow zianarah_arrow_next" id="zianarah_next" type="button" aria-label="Foto berikutnya">
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+
+            <div class="zianarah_dots" id="zianarah_dots" role="tablist" aria-label="Pilih foto"></div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
     <section class="zianarah_projects" id="zianarah_projects">
         <div class="zianarah_container">
 
-            <h2 class="zianarah_title">My Projects</h2>
+            <p class="zianarah_label zianarah_reveal">FEATURED</p>
+            <h2 class="zianarah_title zianarah_reveal" style="--d:.08s">My Projects</h2>
 
             <div class="zianarah_project_container">
 
-                <div class="zianarah_project_card">
-                    <img src="images/project-numsolve.jpg" alt="NumSolve numerical methods calculator">
+                <article class="zianarah_project_card zianarah_glass zianarah_reveal" style="--d:.05s">
+                    <a class="zianarah_project_thumb" href="https://zianarah.github.io/numsolve/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img src="images/projects/numsolve.jpg" alt="" loading="lazy">
+                    </a>
                     <div class="zianarah_project_info">
+                        <span class="zianarah_tag">Web App</span>
                         <h3>NumSolve</h3>
                         <p>Numerical methods calculator for ODEs using Euler, Heun, and Runge-Kutta 4.</p>
-                        <a href="https://zianarah.github.io/numsolve/" target="_blank" rel="noopener">View Project &rarr;</a>
+                        <a href="https://zianarah.github.io/numsolve/" target="_blank" rel="noopener" class="zianarah_project_link">View Project <span aria-hidden="true">&rarr;</span></a>
                     </div>
-                </div>
+                </article>
 
-                <div class="zianarah_project_card">
-                    <img src="images/project-portfolio.jpg" alt="Personal portfolio website">
+                <article class="zianarah_project_card zianarah_glass zianarah_reveal" style="--d:.15s">
+                    <a class="zianarah_project_thumb" href="https://zianarah.github.io/redesign-unicef/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img src="images/projects/unicef.jpg" alt="" loading="lazy">
+                    </a>
                     <div class="zianarah_project_info">
-                        <h3>Personal Portfolio</h3>
-                        <p>Personal portfolio website built with HTML and CSS.</p>
-                        <a href="https://zianarah.github.io/portofolio-zianarah/" target="_blank" rel="noopener">View Project &rarr;</a>
+                        <span class="zianarah_tag">Redesign</span>
+                        <h3>Redesign UNICEF Indonesia</h3>
+                        <p>Child-friendly redesign of the UNICEF Indonesia homepage, made as a university assignment.</p>
+                        <a href="https://zianarah.github.io/redesign-unicef/" target="_blank" rel="noopener" class="zianarah_project_link">View Project <span aria-hidden="true">&rarr;</span></a>
                     </div>
-                </div>
+                </article>
+
+                <article class="zianarah_project_card zianarah_glass zianarah_reveal" style="--d:.25s">
+                    <a class="zianarah_project_thumb" href="https://typo-sans-44275268.figma.site/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img src="images/projects/montrax.jpg" alt="" loading="lazy">
+                    </a>
+                    <div class="zianarah_project_info">
+                        <span class="zianarah_tag">Money Tracker</span>
+                        <h3>MontraX</h3>
+                        <p>Money tracker app to manage multiple wallets, transactions, and spending statistics.</p>
+                        <a href="https://typo-sans-44275268.figma.site/" target="_blank" rel="noopener" class="zianarah_project_link">View Project <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </article>
+
+                <article class="zianarah_project_card zianarah_glass zianarah_reveal" style="--d:.35s">
+                    <a class="zianarah_project_thumb" href="https://syntax-circle-79697952.figma.site" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img src="images/projects/pijopos.jpg" alt="" loading="lazy">
+                    </a>
+                    <div class="zianarah_project_info">
+                        <span class="zianarah_tag">Point of Sale</span>
+                        <h3>PijoPOS</h3>
+                        <p>Point-of-sale app concept that makes running a Pisang Ijo business easier.</p>
+                        <a href="https://syntax-circle-79697952.figma.site" target="_blank" rel="noopener" class="zianarah_project_link">View Project <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </article>
 
             </div>
 
@@ -146,20 +274,36 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- ================= CTA ================= -->
+    <section class="zianarah_cta_section" id="zianarah_contact">
+        <div class="zianarah_container">
+            <div class="zianarah_cta zianarah_reveal zianarah_reveal_zoom">
+                <h2>Let's <span class="zianarah_grad">Create Together</span></h2>
+                <p>Have a project in mind? I'd love to hear about it.</p>
+                <a href="mailto:zihanzianara@gmail.com" class="zianarah_button zianarah_mail">Get In Touch
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
     <footer class="zianarah_footer">
         <div class="zianarah_container">
 
             <div class="zianarah_footer_content">
                 <div class="zianarah_footer_brand">
-                    <h3>Zianarah <span>Portofolio</span></h3>
+                    <h3>Zianarah <span class="zianarah_grad">Portofolio</span></h3>
                     <p>Build, Learn, and Share Knowledge</p>
                 </div>
 
                 <ul class="zianarah_footer_contact">
-                    <li><img src="images/icons/mail-white.svg" alt="">zihanzianara@gmail.com</li>
-                    <li><img src="images/icons/phone-white.svg" alt="">+62 8xx xxxx xxxx</li>
-                    <li><img src="images/icons/pin-white.svg" alt="">Tasikmalaya, Indonesia</li>
+                    <li><a href="mailto:zihanzianara@gmail.com" class="zianarah_mail">zihanzianara@gmail.com</a></li>
+                    <li>Tasikmalaya, Indonesia</li>
+                    <li><a href="https://github.com/zianarah" target="_blank" rel="noopener">github.com/zianarah</a></li>
                 </ul>
             </div>
 
@@ -168,5 +312,22 @@
         </div>
     </footer>
 
+
+    <!-- ================= LIGHTBOX ================= -->
+    <div class="zianarah_lightbox" id="zianarah_lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto" hidden>
+        <button class="zianarah_lb_close" id="zianarah_lb_close" type="button" aria-label="Tutup">&times;</button>
+        <button class="zianarah_arrow zianarah_lb_prev" id="zianarah_lb_prev" type="button" aria-label="Foto sebelumnya">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <figure class="zianarah_lb_figure">
+            <img src="" alt="" id="zianarah_lb_img">
+            <figcaption id="zianarah_lb_caption"></figcaption>
+        </figure>
+        <button class="zianarah_arrow zianarah_lb_next" id="zianarah_lb_next" type="button" aria-label="Foto berikutnya">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
